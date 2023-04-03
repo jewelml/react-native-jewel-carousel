@@ -43,4 +43,4 @@ const Carousel = () => {
 }
 ```
 
-## Docs[./docs/index.html]
+## [Docs](./docs/index.html)
