@@ -14,7 +14,9 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "docs": "./node_modules/.bin/jsdoc -d docs -c ./jsdoc.conf.json"
+    "docs": "./node_modules/.bin/jsdoc -c ./jsdoc.conf.json",
+    "docs:markdown": "./node_modules/.bin/jsdoc2md --files PersonalizationCarousel.js SliderEntry.js models.js > docs/API.md",
+    "postdocs": "npm run docs:markdown"
   },
   "repository": {
     "type": "git",
@@ -37,6 +39,7 @@
   },
   "devDependencies": {
     "jsdoc": "^4.0.2",
+    "jsdoc-to-markdown": "^8.0.0",
     "react": "^16.9.0",
     "react-native": "^0.61.5"
   },
