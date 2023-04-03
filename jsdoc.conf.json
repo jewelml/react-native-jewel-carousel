@@ -1,0 +1,16 @@
+{
+  "plugins": [],
+  "recurseDepth": 1,
+  "source": {
+      "include": ["./PersonalizationCarousel.js", "./SliderEntry.js", "./models.js"]
+  },
+  "sourceType": "module",
+  "tags": {
+      "allowUnknownTags": true,
+      "dictionaries": ["jsdoc","closure"]
+  },
+  "templates": {
+      "cleverLinks": false,
+      "monospaceLinks": false
+  }
+}
