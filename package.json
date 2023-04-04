@@ -1,7 +1,7 @@
 {
   "name": "@jewel_ml/react-native-jewel-carousel",
   "title": "React Native Jewel Carousel",
-  "version": "0.0.0-beta.2",
+  "version": "0.0.0-beta.3",
   "description": "React Native component for creating a carousel with a JewelML personalizations",
   "main": "index.js",
   "files": [
@@ -9,8 +9,11 @@
     "android",
     "index.js",
     "ios",
-    "react-native-jewel-carousel.podspec",
-    "api.js"
+    "api.js",
+    "models.js",
+    "PersonalizationCarousel.js",
+    "SliderEntry.js",
+    "styles"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -44,6 +47,7 @@
     "react-native": "^0.61.5"
   },
   "dependencies": {
+    "capitalize": "^2.0.4",
     "react-native-snap-carousel": "^3.9.1"
   }
 }

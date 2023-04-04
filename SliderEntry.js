@@ -8,15 +8,13 @@ import styles from './styles/SliderEntry.style';
  * This is a component that renders a single slide in the carousel.
  * @class SliderEntry
  * @param {object} props - Props for the JSX component.
- * @param {object} props.data - The data for the slide.
- * @param {string} props.data.title - The title of the slide.
- * @param {string} props.data.subtitle - The subtitle of the slide.
- * @param {string} props.data.illustration - The image for the slide.
- * @param {string} props.data.description - The description of the slide.
+ * @param {object} props.data - The catalog item data for the slide.
  * @param {boolean} props.even - Whether the slide is even.
  * @param {boolean} props.parallax - Whether the slide has parallax.
  * @param {object} props.parallaxProps - The parallax properties.
  * @param {function} props.onPressItem - The function to call when the slide is pressed.
+ * @param {function} [props.renderTitle] - Custom render function to generate JSX element for title.
+ * @param {function} [props.renderSubtitle] - Custom render function to generate JSX element for subtitle.
  * @returns {JSX.Element} - The JSX for the component.
  */
 export default class SliderEntry extends Component {
@@ -30,11 +28,13 @@ export default class SliderEntry extends Component {
 
   get image() {
     const {
-      data: {illustration},
+      data,
       parallax,
       parallaxProps,
       even,
     } = this.props;
+
+    const illustration = data.standard_features.image_url_src
 
     return parallax ? (
       <ParallaxImage
@@ -56,10 +56,13 @@ export default class SliderEntry extends Component {
 
   render() {
     const {
-      data: {title, subtitle},
+      data,
       even,
       onPressItem,
     } = this.props;
+
+    const title = typeof this.props.renderTitle === 'function' ? this.props.renderTitle(data) : data.title
+    const subtitle = typeof this.props.renderSubtitle === 'function' ? this.props.renderSubtitle(data) : data.description
 
     const uppercaseTitle = title ? (
       <Text
@@ -97,6 +100,15 @@ export default class SliderEntry extends Component {
             numberOfLines={2}>
             {subtitle}
           </Text>
+          {
+            description ? (
+              <Text
+                style={[styles.subtitle, even ? styles.subtitleEven : {}]}
+                numberOfLines={2}>
+                {description}
+              </Text>
+            ) : null
+          }
         </View>
       </TouchableOpacity>
     );

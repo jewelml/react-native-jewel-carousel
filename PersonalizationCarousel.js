@@ -46,13 +46,9 @@ const PersonalizationCarousel = (props) => {
   const renderItem = (image, title, text) => {
     return (
       <SliderEntry
-          data={{
-            title: item.title,
-            subtitle: item.description,
-            illustration: item.standard_features.image_url_src,
-          }}
-          onPressItem={onPressItem}
-        />
+        data={item}
+        onPressItem={onPressItem}
+      />
     )
   }
 
