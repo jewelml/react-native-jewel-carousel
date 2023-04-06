@@ -1,7 +1,7 @@
 {
   "name": "@jewel_ml/react-native-jewel-carousel",
   "title": "React Native Jewel Carousel",
-  "version": "0.0.0-beta.3",
+  "version": "1.0.0",
   "description": "React Native component for creating a carousel with a JewelML personalizations",
   "main": "index.js",
   "files": [
