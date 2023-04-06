@@ -43,7 +43,7 @@ const PersonalizationCarousel = (props) => {
     })()
   }, [api_key, item_id, unique_id, model])
 
-  const renderItem = (image, title, text) => {
+  const renderItem = (item) => {
     return (
       <SliderEntry
         data={item}
@@ -58,7 +58,7 @@ const PersonalizationCarousel = (props) => {
         currentItem={activeSlide}
         data={items}
         renderItem={({item}) => {
-          return renderItem(item.standard_features.image_url_src, item.title, item.description)
+          return renderItem(item)
         }}
         onSnapToItem={(index) => setActiveSlide(index)}
         loop={true}

@@ -100,15 +100,6 @@ export default class SliderEntry extends Component {
             numberOfLines={2}>
             {subtitle}
           </Text>
-          {
-            description ? (
-              <Text
-                style={[styles.subtitle, even ? styles.subtitleEven : {}]}
-                numberOfLines={2}>
-                {description}
-              </Text>
-            ) : null
-          }
         </View>
       </TouchableOpacity>
     );

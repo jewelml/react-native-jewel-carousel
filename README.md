@@ -11,7 +11,7 @@ import styles, {colors} from './styles/index.style';
 
 const Carousel = () => {
   return (
-    <JewelCarousel.BERT
+    <JewelCarousel.BertModel
       api_key="<API_KEY>"
       item_id="<ITEM_ID>"
       unique_id="<USER_UNIQUE_ID>"
@@ -35,12 +35,47 @@ const Carousel = () => {
         inactiveDotColor: colors.black,
         inactiveDotOpacity: 0.4,
         inactiveDotScale: 0.6,
-        carouselRef: this._slider1Ref,
-        tappableDots: !!this._slider1Ref,
       }}
     />
   )
 }
 ```
+
+#### Available Models
+
+* BertModel
+* BprPersonalizedModel
+* BprProductModel
+* ClicksColabfilterModel
+* ColabfilterPersonalizedLongModel
+* ColabfilterProductLongModel
+* ConsiderToo
+* ContentEnhancedModel
+* ContentFilteredModel
+* ContentOnlyModel
+* DeepfmFilteredModel
+* DeepfmPersonalizedModel
+* DeepfmUnfilteredModel
+* DepartmentBestsellerLongModel
+* DepartmentBestsellerModel
+* FbtColabfilterLongModel
+* FbtColabfilterModel
+* FullColabfilterModel
+* GlobalModelTps
+* GlobalModelTsc
+* GlobalSimilarItems
+* LogisticmfPersonalizedModel
+* LogisticmfProductModel
+* PersonalizedColabfilterModel
+* RecentlyViewedItemsLocalStorage
+* Retail
+* RetailLmf
+* RevisedColabfilterPersonalizedModel
+* RevisedColabfilterProductModel
+* SimilarItems
+* SimilarItemsNoVisuals
+* SimpleEmbeddingItems
+* TopSellingLongModel
+* TopSellingModel
 
 ## [Docs](./docs/API.md)

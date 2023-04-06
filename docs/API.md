@@ -28,15 +28,13 @@ This is a component that renders a single slide in the carousel.
 | Param | Type | Description |
 | --- | --- | --- |
 | props | <code>object</code> | Props for the JSX component. |
-| props.data | <code>object</code> | The data for the slide. |
-| props.data.title | <code>string</code> | The title of the slide. |
-| props.data.subtitle | <code>string</code> | The subtitle of the slide. |
-| props.data.illustration | <code>string</code> | The image for the slide. |
-| props.data.description | <code>string</code> | The description of the slide. |
+| props.data | <code>object</code> | The catalog item data for the slide. |
 | props.even | <code>boolean</code> | Whether the slide is even. |
 | props.parallax | <code>boolean</code> | Whether the slide has parallax. |
 | props.parallaxProps | <code>object</code> | The parallax properties. |
 | props.onPressItem | <code>function</code> | The function to call when the slide is pressed. |
+| [props.renderTitle] | <code>function</code> | Custom render function to generate JSX element for title. |
+| [props.renderSubtitle] | <code>function</code> | Custom render function to generate JSX element for subtitle. |
 
 <a name="PersonalizationCarousel"></a>
 

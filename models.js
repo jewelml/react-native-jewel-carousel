@@ -38,7 +38,7 @@ const MODELS = [
   'top-selling-long-model',
   'top-selling-model'
 ].reduce((acc, model) => {
-  acc[capitalize(model.replace('-', ' ')).replace(' ', '')] = (props) => {
+  acc[capitalize.words(model.replace(/-/g, ' ')).replace(/\s/g, '')] = (props) => {
     return (
       <PersonalizationCarousel
         model={model}
