@@ -4,7 +4,7 @@ import {colors} from './index.style';
 const IS_IOS = Platform.OS === 'ios';
 const {width: viewportWidth, height: viewportHeight} = Dimensions.get('window');
 
-function wp(percentage) {
+function wp(percentage: number) {
   const value = (percentage * viewportWidth) / 100;
   return Math.round(value);
 }

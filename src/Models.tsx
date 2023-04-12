@@ -1,6 +1,7 @@
+import React from 'react'
 import capitalize from 'capitalize'
 
-import PersonalizationCarousel from './PersonalizationCarousel'
+import PersonalizationCarousel, {PersonalizationCarouselProps} from './PersonalizationCarousel'
 
 const MODELS = [
   'bert-model',
@@ -37,12 +38,12 @@ const MODELS = [
   'simple-embedding-items',
   'top-selling-long-model',
   'top-selling-model'
-].reduce((acc, model) => {
-  acc[capitalize.words(model.replace(/-/g, ' ')).replace(/\s/g, '')] = (props) => {
+].reduce<{[key: string]: React.FC<PersonalizationCarouselProps>}>((acc, model) => {
+  acc[capitalize.words(model.replace(/-/g, ' ')).replace(/\s/g, '')] = (props: PersonalizationCarouselProps) => {
     return (
       <PersonalizationCarousel
-        model={model}
-        {...props}
+      {...props}
+      model={model}
       />
     )
   }

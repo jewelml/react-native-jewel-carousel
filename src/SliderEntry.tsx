@@ -1,8 +1,20 @@
-import React, {Component} from 'react';
-import {View, Text, Image, TouchableOpacity} from 'react-native';
-import PropTypes from 'prop-types';
-import {ParallaxImage} from 'react-native-snap-carousel';
-import styles from './styles/SliderEntry.style';
+import React, {Component} from 'react'
+import {View, Text, Image, TouchableOpacity} from 'react-native'
+import PropTypes from 'prop-types'
+import {ParallaxImage} from 'react-native-snap-carousel'
+
+import styles from './styles/SliderEntry.style'
+import {ICatalogItem} from './types'
+
+export interface SliderEntryProps {
+  data: ICatalogItem
+  even?: boolean
+  parallax?: boolean
+  parallaxProps?: any
+  onPressItem?: (item: ICatalogItem) => void
+  renderTitle?: (item: ICatalogItem) => JSX.Element
+  renderSubtitle?: (item: ICatalogItem) => JSX.Element
+}
 
 /**
  * This is a component that renders a single slide in the carousel.
@@ -12,20 +24,12 @@ import styles from './styles/SliderEntry.style';
  * @param {boolean} props.even - Whether the slide is even.
  * @param {boolean} props.parallax - Whether the slide has parallax.
  * @param {object} props.parallaxProps - The parallax properties.
- * @param {function} props.onPressItem - The function to call when the slide is pressed.
+ * @param {function} [props.onPressItem]- The function to call when the slide is pressed.
  * @param {function} [props.renderTitle] - Custom render function to generate JSX element for title.
  * @param {function} [props.renderSubtitle] - Custom render function to generate JSX element for subtitle.
  * @returns {JSX.Element} - The JSX for the component.
  */
-export default class SliderEntry extends Component {
-  static propTypes = {
-    data: PropTypes.object.isRequired,
-    even: PropTypes.bool,
-    parallax: PropTypes.bool,
-    parallaxProps: PropTypes.object,
-    onPressItem: PropTypes.func,
-  };
-
+export default class SliderEntry extends Component<SliderEntryProps> {
   get image() {
     const {
       data,
@@ -68,7 +72,7 @@ export default class SliderEntry extends Component {
       <Text
         style={[styles.title, even ? styles.titleEven : {}]}
         numberOfLines={2}>
-        {title.toUpperCase()}
+        {typeof title === 'string' ? title.toUpperCase() : title}
       </Text>
     ) : (
       false
@@ -78,9 +82,11 @@ export default class SliderEntry extends Component {
       <TouchableOpacity
         activeOpacity={1}
         style={styles.slideInnerContainer}
-        onPress={ onPressItem ? onPressItem : () => {
-          alert(`You've clicked '${title}'`);
-        }}>
+        onPress={ 
+          (onPressItem ? onPressItem : () => {
+            alert(`You've clicked '${title}'`);
+          }) as any
+        }>
         <View style={styles.shadow} />
         <View
           style={[

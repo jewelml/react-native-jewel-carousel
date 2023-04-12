@@ -3,7 +3,10 @@
   "title": "React Native Jewel Carousel",
   "version": "1.0.0",
   "description": "React Native component for creating a carousel with a JewelML personalizations",
-  "main": "index.js",
+  "exports": {
+    ".": "./dist/index.js",
+    "./ts/*": "./src/*.ts"
+  },
   "files": [
     "README.md",
     "android",
@@ -17,9 +20,10 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "docs": "./node_modules/.bin/jsdoc -c ./jsdoc.conf.json",
-    "docs:markdown": "./node_modules/.bin/jsdoc2md --files PersonalizationCarousel.js SliderEntry.js models.js > docs/API.md",
-    "postdocs": "npm run docs:markdown"
+    "docs": "./node_modules/.bin/tsdoc -c ./jsdoc.conf.json",
+    "docs:markdown": "./node_modules/.bin/jsdoc2md --files ./src/PersonalizationCarousel.tsx ./src/SliderEntry.tsx ./src/Models.tsx > docs/API.md",
+    "postdocs": "npm run docs:markdown",
+    "build": "./node_modules/.bin/tsc -p ./tsconfig.json"
   },
   "repository": {
     "type": "git",
@@ -41,10 +45,17 @@
     "react-native": ">=0.60.0-rc.0 <1.0.x"
   },
   "devDependencies": {
+    "@types/capitalize": "^2.0.0",
+    "@types/react": "^18.0.35",
+    "@types/react-native": "^0.71.5",
+    "@types/react-native-snap-carousel": "^3.8.5",
     "jsdoc": "^4.0.2",
     "jsdoc-to-markdown": "^8.0.0",
     "react": "^16.9.0",
-    "react-native": "^0.61.5"
+    "react-native": "^0.61.5",
+    "react-native-typescript-transformer": "^1.2.13",
+    "tsdoc": "^0.0.4",
+    "typescript": "^5.0.4"
   },
   "dependencies": {
     "capitalize": "^2.0.4",
