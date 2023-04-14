@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Global</title>
+    <title>JSDoc: Class: SliderEntry</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Global</h1>
+    <h1 class="page-title">Class: SliderEntry</h1>
 
     
 
@@ -28,7 +28,7 @@
 
 <header>
     
-        <h2></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>SliderEntry<span class="signature">(props)</span><span class="type-signature"> &rarr; {JSX.Element}</span></h2>
         
     
 </header>
@@ -38,73 +38,10 @@
     
         
 
-        
-
-
-<dl class="details">
-
     
 
     
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-        
-    
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Methods</h3>
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="PersonalizationCarousel"><span class="type-signature"></span>PersonalizationCarousel<span class="signature">(props)</span><span class="type-signature"> &rarr; {JSX.Element}</span></h4>
+    <h4 class="name" id="SliderEntry"><span class="type-signature"></span>new SliderEntry<span class="signature">(props)</span><span class="type-signature"> &rarr; {JSX.Element}</span></h4>
     
 
     
@@ -112,8 +49,7 @@
 
 
 <div class="description">
-    PersonalizationCarousel is a component that renders a carousel of items.
-Also accepts all props for the Carousel component from react-native-snap-carousel.
+    This is a component that renders a single slide in the carousel.
 </div>
 
 
@@ -179,6 +115,8 @@ Also accepts all props for the Carousel component from react-native-snap-carouse
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
         
 
@@ -191,99 +129,7 @@ Also accepts all props for the Carousel component from react-native-snap-carouse
 
         <tr>
             
-                <td class="name"><code>apiKey</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The API key for the integration.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>itemId</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The item ID for the item to get recommendations for.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>model</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The model to use for the recommendations.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>uniqueId</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The unique ID for the user.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>pagination</code></td>
+                <td class="name"><code>data</code></td>
             
 
             <td class="type">
@@ -296,10 +142,111 @@ Also accepts all props for the Carousel component from react-native-snap-carouse
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last">The pagination options object.</td>
+            <td class="description last">The catalog item data for the slide.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>even</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Whether the slide is even.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>parallax</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Whether the slide has parallax.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>parallaxProps</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The parallax properties.</td>
         </tr>
 
     
@@ -319,10 +266,86 @@ Also accepts all props for the Carousel component from react-native-snap-carouse
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last">The function to call when an item is pressed.</td>
+            <td class="description last">The function to call when the slide is pressed.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>renderTitle</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Custom render function to generate JSX element for title.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>renderSubtitle</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Custom render function to generate JSX element for subtitle.</td>
         </tr>
 
     
@@ -370,7 +393,7 @@ Also accepts all props for the Carousel component from react-native-snap-carouse
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="PersonalizationCarousel.js.html">PersonalizationCarousel.js</a>, <a href="PersonalizationCarousel.js.html#line55">line 55</a>
+        <a href="SliderEntry.js.html">SliderEntry.js</a>, <a href="SliderEntry.js.html#line33">line 33</a>
     </li></ul></dd>
     
 
@@ -399,7 +422,7 @@ Also accepts all props for the Carousel component from react-native-snap-carouse
 
         
 <div class="param-desc">
-    The JSX for the component.
+    - The JSX for the component.
 </div>
 
 
@@ -422,7 +445,23 @@ Also accepts all props for the Carousel component from react-native-snap-carouse
 
 
 
-        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
     
 
     

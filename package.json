@@ -5,25 +5,26 @@
   "description": "React Native component for creating a carousel with a JewelML personalizations",
   "exports": {
     ".": "./dist/index.js",
-    "./ts/*": "./src/*.ts"
+    "./ts": "./src/index.ts",
+    "./ts/*.ts": "./src/*.ts",
+    "./ts/*.tsx": "./src/*.tsx"
   },
   "files": [
     "README.md",
     "android",
-    "index.js",
     "ios",
-    "api.js",
-    "models.js",
-    "PersonalizationCarousel.js",
-    "SliderEntry.js",
-    "styles"
+    "dist",
+    "src",
+    "docs"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "docs": "./node_modules/.bin/tsdoc -c ./jsdoc.conf.json",
-    "docs:markdown": "./node_modules/.bin/jsdoc2md --files ./src/PersonalizationCarousel.tsx ./src/SliderEntry.tsx ./src/Models.tsx > docs/API.md",
+    "docs": "./node_modules/.bin/jsdoc -c ./jsdoc.conf.json",
+    "docs:markdown": "./node_modules/.bin/jsdoc2md --files ./dist/PersonalizationCarousel.js ./dist/SliderEntry.js ./dist/Models.js > docs/API.md",
     "postdocs": "npm run docs:markdown",
-    "build": "./node_modules/.bin/tsc -p ./tsconfig.json"
+    "build": "./node_modules/.bin/tsc -p ./tsconfig.json",
+    "postbuild": "npm run docs",
+    "publish": "npm run build && npm publish"
   },
   "repository": {
     "type": "git",
@@ -54,7 +55,6 @@
     "react": "^16.9.0",
     "react-native": "^0.61.5",
     "react-native-typescript-transformer": "^1.2.13",
-    "tsdoc": "^0.0.4",
     "typescript": "^5.0.4"
   },
   "dependencies": {

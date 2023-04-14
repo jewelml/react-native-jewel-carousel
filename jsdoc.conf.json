@@ -2,7 +2,7 @@
   "plugins": [],
   "recurseDepth": 1,
   "source": {
-      "include": ["./src/PersonalizationCarousel.tsx", "./src/SliderEntry.tsx", "./src/Models.tsx"]
+      "include": ["./dist/PersonalizationCarousel.js", "./dist/SliderEntry.js", "./dist/Models.js"]
   },
   "sourceType": "module",
   "tags": {
