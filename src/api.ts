@@ -12,6 +12,6 @@ export async function getPersonalizationData(
   item_id: string,
   unique_id: string,
 ): Promise<PersonalizationData> {
-  return fetch(getPersonalizationURL(key, model, item_id, unique_id))
-    .then((response) => response.json())
+  const response = await fetch(getPersonalizationURL(key, model, item_id, unique_id))
+  return response.json()
 }

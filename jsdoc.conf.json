@@ -2,7 +2,7 @@
   "plugins": [],
   "recurseDepth": 1,
   "source": {
-      "include": ["./dist/PersonalizationCarousel.js", "./dist/SliderEntry.js", "./dist/Models.js"]
+      "include": ["./dist/src/PersonalizationCarousel.js", "./dist/src/SliderEntry.js", "./dist/src/Models.js"]
   },
   "sourceType": "module",
   "tags": {

@@ -1,19 +1,21 @@
 import React, {useState, useEffect} from 'react'
-import {View, ActivityIndicator} from 'react-native'
-import Carousel, {Pagination, CarouselProperties, PaginationProps} from 'react-native-snap-carousel'
+import {View, ActivityIndicator, Dimensions} from 'react-native'
+import * as SnapCarousel from 'react-native-snap-carousel'
 
-import {ICatalogItem, PersonalizationData} from './types'
+import {ICatalogItem, PersonalizationData, PersonalizationModel} from './types'
 import {getPersonalizationData} from './api'
 import SliderEntry from './SliderEntry'
+
+const {Pagination, default: Carousel} = SnapCarousel
 
 export type PersonalizationCarouselProps = {
   apiKey: string
   itemId: string
-  model: string
+  model: PersonalizationModel
   uniqueId?: string
-  pagination?: PaginationProps
+  pagination?: SnapCarousel.PaginationProperties
   onPressItem: (item: ICatalogItem) => void
-} & CarouselProperties<ICatalogItem>
+} & SnapCarousel.CarouselProperties<ICatalogItem>
 
 /**
  * PersonalizationCarousel is a component that renders a carousel of items.
@@ -39,6 +41,7 @@ const PersonalizationCarousel: React.FC<PersonalizationCarouselProps> = (props) 
     pagination = {},
     onPressItem,
   } = props
+  const windowWidth = Dimensions.get('window').width
 
   useEffect(() => {
     setIsLoading(true)
@@ -65,8 +68,8 @@ const PersonalizationCarousel: React.FC<PersonalizationCarouselProps> = (props) 
       <Carousel
         onSnapToItem={(index) => setActiveSlide(index)}
         loop={true}
-        sliderWidth={400}
-        itemWidth={400}
+        sliderWidth={windowWidth}
+        itemWidth={windowWidth}
         {...Object.assign({}, props, {currentItem: activeSlide, currentIndex: activeSlide})}
         data={items}
         renderItem={
