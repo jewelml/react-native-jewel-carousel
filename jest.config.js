@@ -17,4 +17,8 @@ module.exports = {
   collectCoverage: true,
   coverageDirectory: '.jest/coverage',
   testRegex: '/tests/.+\\.test\\.(ts|tsx)$',
+  transformIgnorePatterns: [
+    'node_modules/(?!react-native-snap-carousel|@react-native|react-native)'
+  ],
+  silent: true,
 }
