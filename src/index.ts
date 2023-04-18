@@ -1,9 +1,9 @@
 import PersonalizationCarousel from './PersonalizationCarousel'
 import SliderEntry from './SliderEntry'
-import models from './Models'
+import Models from './Models'
 
 export default {
   PersonalizationCarousel,
   SliderEntry,
-  ...models,
+  Models,
 }

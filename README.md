@@ -6,17 +6,20 @@
 
 ## Usage
 ```javascript
+import React from 'react'
 import JewelCarousel from 'react-native-jewel-carousel';
+import {Dimensions} from 'react-native';
 import styles, {colors} from './styles/index.style';
 
 const Carousel = () => {
+  const windowWidth = Dimensions.get('window').width
   return (
-    <JewelCarousel.BertModel
+    <JewelCarousel.Models.BertModel
       api_key="<API_KEY>"
       item_id="<ITEM_ID>"
       unique_id="<USER_UNIQUE_ID>"
-      sliderWidth={sliderWidth}
-      itemWidth={itemWidth}
+      sliderWidth={windowWidth}
+      itemWidth={windowWidth/2}
       inactiveSlideScale={0.95}
       inactiveSlideOpacity={1}
       enableMomentum={true}
