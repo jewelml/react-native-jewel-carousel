@@ -1,7 +1,7 @@
 {
   "name": "@jewel_ml/react-native-jewel-carousel",
   "title": "React Native Jewel Carousel",
-  "version": "1.1.0-beta.0",
+  "version": "1.1.0-beta.1",
   "description": "React Native component for creating a carousel with a JewelML personalizations",
   "main": "dist/src/index.js",
   "typings": "dist/src/index.d.ts",
@@ -21,7 +21,7 @@
     "postdocs": "npm run docs:markdown",
     "build": "./node_modules/.bin/tsc -p ./tsconfig.json",
     "postbuild": "npm run docs",
-    "publish": "npm run build && npm publish"
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
