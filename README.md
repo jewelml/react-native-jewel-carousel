@@ -2,7 +2,7 @@
 
 ## Getting started
 
-`$ npm install react-native-jewel-carousel --save`
+`$ npm install @jewel_ml/react-native-jewel-carousel --save`
 
 ## Usage
 ```javascript
