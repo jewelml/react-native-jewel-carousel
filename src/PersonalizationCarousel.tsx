@@ -15,7 +15,8 @@ export type PersonalizationCarouselProps = {
   uniqueId?: string
   pagination?: SnapCarousel.PaginationProperties
   onPressItem: (item: ICatalogItem) => void
-} & SnapCarousel.CarouselProperties<ICatalogItem>
+  renderItem?: (item: ICatalogItem) => JSX.Element
+} & Partial<SnapCarousel.CarouselProperties<ICatalogItem>>
 
 /**
  * PersonalizationCarousel is a component that renders a carousel of items.
@@ -73,11 +74,15 @@ const PersonalizationCarousel: React.FC<PersonalizationCarouselProps> = (props) 
         {...Object.assign({}, props, {currentItem: activeSlide, currentIndex: activeSlide})}
         data={items}
         renderItem={
-          (props.renderItem ? props.renderItem : ({item}: {item: ICatalogItem, index: number}) => renderItem(item)) as any
+          (
+            props.renderItem
+              ? ({item}: {item: ICatalogItem, index: number}) => (props.renderItem as any)(item)
+              : ({item}: {item: ICatalogItem, index: number}) => renderItem(item)
+            ) as any
         }
       />
       <Pagination
-        dotsLength={items.length}
+        dotsLength={items ? items.length : 0}
         activeDotIndex={activeSlide}
         containerStyle={{ backgroundColor: 'rgba(0, 0, 0, 0.75)' }}
         dotStyle={{
